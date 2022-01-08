@@ -1,0 +1,13 @@
+{
+  "name": "isopt",
+  "version": "0.0.7",
+  "description": "is function",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
