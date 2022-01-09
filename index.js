@@ -108,6 +108,72 @@ function isArray(value) {
     return Object.prototype.toString.call(value) === "[object Array]";
 }
 
+/**
+ * 是否是浏览器环境
+ * @returns boolean
+ */
+function isBrowser() {
+    return typeof window === "undefined";
+}
+
+
+/**
+ * 是否是windows环境
+ * @returns boolean
+ */
+function isWindows() {
+    if (!isBrowser()) {
+        return false;
+    }
+
+    const userAgent = window.navigator.userAgent.toLowerCase();
+
+    return userAgent.indexOf("windows nt") >= 0;
+}
+
+/**
+ * 是否是mac os环境
+ * @returns boolean
+ */
+function isIPhone() {
+    if (!isBrowser()) {
+        return false;
+    }
+
+    const userAgent = window.navigator.userAgent.toLowerCase();
+
+    return userAgent.indexOf("iphone os") >= 0;
+}
+
+/**
+ * 是否是mac os环境
+ * @returns boolean
+ */
+function isMac() {
+    if (!isBrowser()) {
+        return false;
+    }
+
+    const userAgent = window.navigator.userAgent.toLowerCase();
+
+    return !isIPhone() && userAgent.indexOf("mac os x") >= 0;
+}
+
+/**
+ * 是否是mac os环境
+ * @returns boolean
+ */
+function isWeixin() {
+    if (!isBrowser()) {
+        return false;
+    }
+
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    return userAgent.indexOf("micromessenger") >= 0;
+}
+
+
+
 module.exports = {
     isEmpty,
     isCellphone,
@@ -118,5 +184,10 @@ module.exports = {
     isLeap,
     isJSON,
     isArray,
-    isObject
+    isObject,
+    isBrowser,
+    isWindows,
+    isMac,
+    isIPhone,
+    isWeixin
 }
