@@ -122,7 +122,7 @@ function isBrowser() {
  */
 function isWindows() {
     if (!isBrowser()) {
-        return require("os").platform().toLocaleLowerCase().indexOf("win");
+        return require("os").platform().toLocaleLowerCase() === "win32";
     }
 
     const userAgent = window.navigator.userAgent.toLowerCase();
