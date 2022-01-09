@@ -1,6 +1,6 @@
 {
   "name": "isopt",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "is function",
   "main": "index.js",
   "scripts": {

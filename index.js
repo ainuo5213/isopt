@@ -132,7 +132,7 @@ function isWindows() {
 }
 
 /**
- * 是否是mac os环境
+ * 是否是iphone os环境
  * @returns boolean
  */
 function isIPhone() {
@@ -160,7 +160,7 @@ function isMac() {
 }
 
 /**
- * 是否是mac os环境
+ * 是否是微信环境
  * @returns boolean
  */
 function isWeixin() {
@@ -172,7 +172,33 @@ function isWeixin() {
     return userAgent.indexOf("micromessenger") >= 0;
 }
 
+/**
+ * 是否是原始类型的值
+ * @param {any} value 数据
+ * @returns boolean
+ */
+function isPrimitive(value) {
+    const primitives = ["string", "symbol", "number", "boolean", "undefined", "bigint"];
+    return primitives.indexOf(typeof value) >= 0;
+}
 
+/**
+ * 是否是大写字母
+ * @param {string} value 数据
+ * @returns boolean
+ */
+function isUpperCased(value) {
+    return value === value.toUpperCase();
+}
+
+/**
+ * 是否是小写字母
+ * @param {string} value 数据
+ * @returns boolean
+ */
+function isLowerCased(value) {
+    return value === value.toLowerCase();
+}
 
 module.exports = {
     isEmpty,
@@ -189,5 +215,8 @@ module.exports = {
     isWindows,
     isMac,
     isIPhone,
-    isWeixin
+    isWeixin,
+    isPrimitive,
+    isUpperCased,
+    isLowerCased
 }
