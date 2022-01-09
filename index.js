@@ -113,7 +113,7 @@ function isArray(value) {
  * @returns boolean
  */
 function isBrowser() {
-    return typeof window === "undefined";
+    return typeof window !== "undefined";
 }
 
 
