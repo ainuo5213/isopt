@@ -116,14 +116,13 @@ function isBrowser() {
     return typeof window !== "undefined";
 }
 
-
 /**
  * 是否是windows环境
  * @returns boolean
  */
 function isWindows() {
     if (!isBrowser()) {
-        return false;
+        return require("os").platform().toLocaleLowerCase().indexOf("win");
     }
 
     const userAgent = window.navigator.userAgent.toLowerCase();
@@ -151,7 +150,7 @@ function isIPhone() {
  */
 function isMac() {
     if (!isBrowser()) {
-        return false;
+        return require("os").platform().toLocaleLowerCase() === "darwin";
     }
 
     const userAgent = window.navigator.userAgent.toLowerCase();
