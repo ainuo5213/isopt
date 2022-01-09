@@ -4,7 +4,7 @@
  * @returns boolean
  */
 function isEmpty(obj) {
-    if (Array.isArray(obj)) {
+    if (isArray(obj)) {
         return obj.length === 0;
     }
     return Object.getOwnPropertyNames(obj).length === 0;
@@ -84,11 +84,28 @@ function isChinese(value) {
 function isJSON(value) {
     try {
         const result = JSON.parse(value);
-        return Object.prototype.toString.call(result) === "[object Array]" ||
-            Object.prototype.toString.call(result) === "[object Object]";
+        return isArray(result) || isObject(result);
     } catch {
         return false;
     }
+}
+
+/**
+ * 是否是对象
+ * @param {any} value 数据
+ * @returns boolean
+ */
+function isObject(value) {
+    return Object.prototype.toString.call(value) === "[object Object]";
+}
+
+/**
+ * 是否是数组
+ * @param {any} value 数据
+ * @returns boolean
+ */
+function isArray(value) {
+    return Object.prototype.toString.call(value) === "[object Array]";
 }
 
 module.exports = {
@@ -99,5 +116,7 @@ module.exports = {
     isFalse,
     isHTML,
     isLeap,
-    isJSON
+    isJSON,
+    isArray,
+    isObject
 }

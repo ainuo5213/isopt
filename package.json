@@ -1,6 +1,6 @@
 {
   "name": "isopt",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "is function",
   "main": "index.js",
   "scripts": {
@@ -9,5 +9,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "homepage": "https://github.com/ainuo5213/isopt",
+  "repository": "https://github.com/ainuo5213/isopt"
 }
